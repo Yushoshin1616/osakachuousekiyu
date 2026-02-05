@@ -1,6 +1,9 @@
 (() => {
   const root = document.documentElement;
   const toggle = document.querySelector('[data-lang-toggle]');
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const navBackdrop = document.querySelector('[data-nav-backdrop]');
+  const mobileNav = document.querySelector('.mobile-nav');
 
   const applyLang = (lang) => {
     root.setAttribute('data-lang', lang);
@@ -25,6 +28,42 @@
       applyLang(next);
     });
   }
+
+  const closeNav = () => {
+    document.body.classList.remove('nav-open');
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (mobileNav) {
+      mobileNav.setAttribute('aria-hidden', 'true');
+    }
+  };
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      if (mobileNav) {
+        mobileNav.setAttribute('aria-hidden', String(!isOpen));
+      }
+    });
+  }
+
+  if (navBackdrop) {
+    navBackdrop.addEventListener('click', closeNav);
+  }
+
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeNav);
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      closeNav();
+    }
+  });
 
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
