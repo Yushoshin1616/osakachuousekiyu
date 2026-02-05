@@ -784,6 +784,111 @@ nav a:hover::after {
   .break {
     display: inline;
   }
+
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 96px 0 64px;
+  }
+
+  .hero-panel {
+    padding: 26px 22px 22px;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 9vw, 44px);
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .hero-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .gate-card {
+    padding: 16px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 6vw, 34px);
+  }
+
+  .section-lead {
+    font-size: 14px;
+  }
+
+  .cta-banner {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(92%, 560px);
+  }
+
+  .nav-actions .btn.primary {
+    display: none;
+  }
+
+  .lang-toggle {
+    padding: 6px 12px;
+  }
+
+  .hero-cta .btn,
+  .cta-banner .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-panel::before {
+    width: 56px;
+  }
+
+  .hero-gate {
+    grid-template-columns: 1fr;
+  }
+
+  .pickup-grid,
+  .media-row,
+  .grid-3,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .motion-item {
+    width: 220px;
+    height: 140px;
+  }
+
+  .creed-card {
+    padding: 24px;
+  }
+
+  .footer {
+    padding: 48px 0 32px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
