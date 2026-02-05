@@ -172,8 +172,13 @@ nav a:hover::after {
   border: 1px solid rgba(15, 25, 45, 0.2);
   background: #fff;
   cursor: pointer;
-  padding: 0;
+  padding: 0 0 0 6px;
   box-shadow: 0 10px 22px rgba(12, 24, 40, 0.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .nav-toggle span {
@@ -181,7 +186,7 @@ nav a:hover::after {
   width: 20px;
   height: 2px;
   background: var(--ink);
-  margin: 5px auto;
+  margin: 0;
   border-radius: 999px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
